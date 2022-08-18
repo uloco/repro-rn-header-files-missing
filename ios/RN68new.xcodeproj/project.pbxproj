@@ -495,7 +495,6 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					"-fcxx-modules",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -527,7 +526,6 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					"-fcxx-modules",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -607,6 +605,7 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-fcxx-modules",
 				);
 				SDKROOT = iphoneos;
 			};
@@ -670,6 +669,7 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+					"-fcxx-modules",
 				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
