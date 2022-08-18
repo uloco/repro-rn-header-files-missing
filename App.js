@@ -8,6 +8,8 @@
 
 import React from 'react';
 import type {Node} from 'react';
+import BleManager from 'react-native-ble-manager';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -25,6 +27,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+BleManager.start();
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';

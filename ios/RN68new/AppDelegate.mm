@@ -6,6 +6,9 @@
 
 #import <React/RCTAppSetupUtils.h>
 
+#import "RNNordicDfu.h"
+#import "BleManager.h"
+
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -54,6 +57,26 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  // react-native-nordic-dfu start 
+  [RNNordicDfu setCentralManagerGetter:^() {
+    return [BleManager getCentralManager];
+  }];
+
+  // Reset manager delegate since the Nordic DFU lib "steals" control over it
+  [RNNordicDfu setOnDFUComplete:^() {
+    NSLog(@"onDFUComplete");
+    CBCentralManager * manager = [BleManager getCentralManager];
+    manager.delegate = [BleManager getInstance];
+  }];
+
+  [RNNordicDfu setOnDFUError:^() {
+    NSLog(@"onDFUError");
+    CBCentralManager * manager = [BleManager getCentralManager];
+    manager.delegate = [BleManager getInstance];
+  }];
+  // react-native-nordic-dfu end 
+
   return YES;
 }
 

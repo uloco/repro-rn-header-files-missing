@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-native": "0.68.2"
+    "react-native": "0.68.2",
+    "react-native-ble-manager": "^8.4.3",
+    "react-native-nordic-dfu": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
